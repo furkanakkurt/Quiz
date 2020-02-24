@@ -1,4 +1,4 @@
-package com.example.quiz;
+ package com.example.quiz;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -78,9 +78,9 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     private void fillCategoriesTable() {
         Category c1 = new Category("Programming");
         addCategory(c1);
-        Category c2 = new Category("Geography");
+        Category c2 = new Category("Math");
         addCategory(c2);
-        Category c3 = new Category("Math");
+        Category c3 = new Category("Spanish");
         addCategory(c3);
     }
 
@@ -91,20 +91,22 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        Question q1 = new Question("Programming, Easy: A", "A", "B", "C", 1, Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        Question q1 = new Question("Which of these data structures requires O(1) time complexity to remove an element from its end?", "Linked List", "Tree", "Dequeue", 3, Question.DIFFICULTY_EASY, Category.PROGRAMMING);
         addQuestion(q1);
-        Question q2 = new Question("Math, Easy: A", "A", "B", "C", 1, Question.DIFFICULTY_EASY, Category.MATH);
+        Question q2 = new Question("An nxn matrix is said to be non-invertible if its determinant is equal to: ", "-1", "1", "0", 3, Question.DIFFICULTY_EASY, Category.MATH);
         addQuestion(q2);
-        Question q3 = new Question("Math, Easy: B", "A", "B", "C", 2, Question.DIFFICULTY_EASY, Category.MATH);
+        Question q3 = new Question("Three different vectors in R^3 forms a basis for R^3 if and only if: ", "They are zero vectors", "They are linearly independent", "They are linearly dependent", 2, Question.DIFFICULTY_EASY, Category.MATH);
         addQuestion(q3);
-        Question q4 = new Question("Programming, Easy: A", "A", "B", "C", 1, Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        Question q4 = new Question("What will the print(9//2) operation print out in python", "4.5", "5", "4", 3, Question.DIFFICULTY_HARD, Category.PROGRAMMING);
         addQuestion(q4);
-        Question q5 = new Question("Geography, Easy: C", "A", "B", "C", 3, Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
+        Question q5 = new Question("¿Cómo se dice \"pencil\" en español?", "lápiz", "libro", "playa", 1, Question.DIFFICULTY_EASY, Category.SPANISH);
         addQuestion(q5);
-        Question q6 = new Question("Programming, Easy: A", "A", "B", "C", 1, Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        Question q6 = new Question("Which of this operators has the left to right associativity?", "Unary", "Logical Not", "Parentheses", 3, Question.DIFFICULTY_HARD, Category.PROGRAMMING);
         addQuestion(q6);
-        Question q7 = new Question("Math, Hard: B", "A", "B", "C", 2, Question.DIFFICULTY_HARD, Category.MATH);
+        Question q7 = new Question("How many words can be built using all the letters once in \"GREECE\"?", "120", "720", "24", 1, Question.DIFFICULTY_MEDIUM, Category.MATH);
         addQuestion(q7);
+        Question q8 = new Question("Which of these languages is not used in Android development?", "Java", "Kotlin", "HTML", 3, Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        addQuestion(q8);
     }
 
     private void addQuestion(Question q) {
